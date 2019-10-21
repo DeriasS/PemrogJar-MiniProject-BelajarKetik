@@ -52,14 +52,12 @@ public class Controller {
             }
             
             if(this.point == 0){
-                int dialogButton = JOptionPane.YES_NO_OPTION;
-                JOptionPane.showConfirmDialog(null, "Do you want to continue?", "Warning", dialogButton);
-                if(dialogButton == JOptionPane.YES_OPTION){
+                if (JOptionPane.showConfirmDialog(null, "Do you want to continue?", "WARNING",
+                JOptionPane.YES_NO_OPTION) == JOptionPane.YES_OPTION) {
                     this.point = 50;
                     proses();
-                }
-                if(dialogButton == JOptionPane.NO_OPTION){
-                    System.exit(0);
+                } else {
+                    this.view.dispose();
                 }
             }
             
